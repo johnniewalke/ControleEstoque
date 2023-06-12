@@ -5,40 +5,53 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1>Gerenciamento de Produtos</h1>
-
-  <div id="formulario">
-    <input type="text" id="codigo" placeholder="Código"><br>
-    <input type="text" id="nome" placeholder="Nome"><br>
-    <input type="number" id="quantidade" placeholder="Quantidade"><br>
-    <input type="text" id="valor" placeholder="Valor Unitário"><br>
-    <textarea id="descricao" placeholder="Descrição"></textarea><br>
-    <input type="text" id="categoria" placeholder="Categoria(s)"><br>
-    <button onclick="adicionarProduto()">Adicionar Produto</button>
+  <div id="themeSelector">
+    <label for="theme">Escolha o tema:</label>
+    <select id="theme" onchange="alterarTema()">
+      <option value="light">Branco</option>
+      <option value="dark">Preto</option>
+    </select>
   </div>
 
-  <div id="consulta">
-    <h2>Consulta de Produtos</h2>
-    <input type="text" id="consultaCodigo" placeholder="Código do Produto">
-    <button onclick="consultarEstoque()">Consultar Estoque</button><br>
-    <input type="text" id="consultaNome" placeholder="Nome do Produto">
-    <button onclick="buscarPorNome()">Buscar por Nome</button><br>
-    <input type="text" id="consultaCategoria" placeholder="Categoria do Produto">
-    <button onclick="buscarPorCategoria()">Buscar por Categoria</button><br>
-    <button onclick="exibirTabelaCompleta()">Exibir Tabela Completa</button>
-  </div>
+  <div id="container">
+    <h1>Gerenciamento de Produtos</h1>
 
-  <table id="tabelaProdutos">
-    <tr>
-      <th>Código</th>
-      <th>Nome</th>
-      <th>Quantidade</th>
-      <th>Valor Unitário</th>
-      <th>Descrição</th>
-      <th>Categoria</th>
-      <th>Ações</th>
-    </tr>
-  </table>
+    <div id="formulario">
+      <input type="text" id="codigo" placeholder="Código"><br>
+      <input type="text" id="nome" placeholder="Nome"><br>
+      <input type="number" id="quantidade" placeholder="Quantidade"><br>
+      <input type="text" id="valor" placeholder="Valor Unitário"><br>
+      <textarea id="descricao" placeholder="Descrição"></textarea><br>
+      <input type="text" id="categoria" placeholder="Categoria(s)"><br>
+      <button onclick="adicionarProduto()">Adicionar Produto</button>
+    </div>
+
+    <div id="consulta">
+      <h2>Consulta de Produtos</h2>
+      <input type="text" id="consultaCodigo" placeholder="Código do Produto">
+      <button onclick="consultarEstoque()">Consultar Estoque</button><br>
+      <input type="text" id="consultaNome" placeholder="Nome do Produto">
+      <button onclick="buscarPorNome()">Buscar por Nome</button><br>
+      <input type="text" id="consultaCategoria" placeholder="Categoria do Produto">
+      <button onclick="buscarPorCategoria()">Buscar por Categoria</button><br>
+      <button onclick="exibirTabelaCompleta()">Exibir Tabela Completa</button>
+    </div>
+
+    <table id="tabelaProdutos">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nome</th>
+          <th>Quantidade</th>
+          <th>Valor Unitário</th>
+          <th>Descrição</th>
+          <th>Categoria</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
 
   <script src="https://apis.google.com/js/api.js"></script>
   <script src="script.js"></script>

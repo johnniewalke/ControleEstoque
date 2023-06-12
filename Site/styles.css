@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#themeSelector {
+  text-align: right;
+  padding: 10px;
+}
+
+#container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#container.light {
+  background-color: #fff;
+  color: #000;
+}
+
+#container.dark {
+  background-color: #000;
+  color: #fff;
+}
+
+#formulario,
+#consulta {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#formulario.light,
+#consulta.light {
+  background-color: #fff;
+}
+
+#formulario.dark,
+#consulta.dark {
+  background-color: #222;
+  color: #fff;
+}
+
+#tabelaProdutos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabelaProdutos.light {
+  background-color: #fff;
+  color: #000;
+}
+
+#tabelaProdutos.dark {
+  background-color: #111;
+  color: #fff;
+}
+
+#tabelaProdutos th,
+#tabelaProdutos td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+#tabelaProdutos th {
+  background-color: #f8f8f8;
+}
+
+#tabelaProdutos td {
+  background-color: #fff;
+}
+
+#tabelaProdutos tr:nth-child(even) td {
+  background-color: #f2f2f2;
+}
+
+#tabelaProdutos th,
+#tabelaProdutos td:first-child {
+  min-width: 100px;
+}
+
+#tabelaProdutos td:last-child {
+  text-align: center;
+}
+
+#tabelaProdutos button {
+  padding: 5px 10px;
+}
