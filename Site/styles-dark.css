@@ -21,14 +21,18 @@ body {
     color: #fff;
   }
   
-  #formulario,
+  #formulario {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
   #consulta {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
-    background-color: #222;
-    color: #fff;
   }
   
   #tabelaProdutos {
