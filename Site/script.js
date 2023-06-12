@@ -218,4 +218,127 @@ function consultarEstoque() {
   
     return "Produto não encontrado";
   }
+
+// Função para buscar produtos por nome
+function buscarPorNome() {
+    var nome = document.getElementById("consultaNome").value;
+    var produtos = buscarProdutosPorNome(nome);
+    exibirProdutosNaTabela(produtos);
+  }
+  
+  // Função para buscar produtos por categoria
+  function buscarPorCategoria() {
+    var categoria = document.getElementById("consultaCategoria").value;
+    var produtos = buscarProdutosPorCategoria(categoria);
+    exibirProdutosNaTabela(produtos);
+  }
+  
+  // Função para buscar produtos por nome
+  function buscarProdutosPorNome(nome) {
+    var tabela = document.getElementById("tabelaProdutos");
+    var produtos = [];
+  
+    for (var i = 1; i < tabela.rows.length; i++) {
+      var nomeCell = tabela.rows[i].cells[1];
+      if (nomeCell.innerHTML.toLowerCase().includes(nome.toLowerCase())) {
+        var produto = obterDadosProduto(tabela.rows[i]);
+        produtos.push(produto);
+      }
+    }
+  
+    return produtos;
+  }
+  
+  // Função para buscar produtos por categoria
+  function buscarProdutosPorCategoria(categoria) {
+    var tabela = document.getElementById("tabelaProdutos");
+    var produtos = [];
+  
+    for (var i = 1; i < tabela.rows.length; i++) {
+      var categoriaCell = tabela.rows[i].cells[5];
+      if (categoriaCell.innerHTML.toLowerCase().includes(categoria.toLowerCase())) {
+        var produto = obterDadosProduto(tabela.rows[i]);
+        produtos.push(produto);
+      }
+    }
+  
+    return produtos;
+  }
+  
+  // Função para exibir todos os produtos na tabela
+  function exibirTabelaCompleta() {
+    var produtos = obterTodosProdutos();
+    exibirProdutosNaTabela(produtos);
+  }
+  
+  // Função para obter todos os produtos
+  function obterTodosProdutos() {
+    var tabela = document.getElementById("tabelaProdutos");
+    var produtos = [];
+  
+    for (var i = 1; i < tabela.rows.length; i++) {
+      var produto = obterDadosProduto(tabela.rows[i]);
+      produtos.push(produto);
+    }
+  
+    return produtos;
+  }
+  
+  // Função para obter os dados de um produto a partir de uma linha da tabela
+  function obterDadosProduto(row) {
+    var cod = row.cells[0].innerHTML;
+    var nome = row.cells[1].innerHTML;
+    var quantidade = row.cells[2].innerHTML;
+    var valor = row.cells[3].innerHTML;
+    var descricao = row.cells[4].innerHTML;
+    var categoria = row.cells[5].innerHTML;
+  
+    return {
+      cod: cod,
+      nome: nome,
+      quantidade: quantidade,
+      valor: valor,
+      descricao: descricao,
+      categoria: categoria
+    };
+  }
+  
+  // Função para exibir os produtos na tabela
+  function exibirProdutosNaTabela(produtos) {
+    var tabela = document.getElementById("tabelaProdutos");
+  
+    // Limpa a tabela
+    while (tabela.rows.length > 1) {
+      tabela.deleteRow(1);
+    }
+  
+    // Preenche a tabela com os produtos
+    for (var i = 0; i < produtos.length; i++) {
+      var produto = produtos[i];
+  
+      var row = tabela.insertRow();
+  
+      var codCell = row.insertCell();
+      codCell.innerHTML = produto.cod;
+  
+      var nomeCell = row.insertCell();
+      nomeCell.innerHTML = produto.nome;
+  
+      var quantidadeCell = row.insertCell();
+      quantidadeCell.innerHTML = produto.quantidade;
+  
+      var valorCell = row.insertCell();
+      valorCell.innerHTML = produto.valor;
+  
+      var descricaoCell = row.insertCell();
+      descricaoCell.innerHTML = produto.descricao;
+  
+      var categoriaCell = row.insertCell();
+      categoriaCell.innerHTML = produto.categoria;
+  
+      var acoesCell = row.insertCell();
+      acoesCell.innerHTML = '<button onclick="excluirProduto(this)">Excluir</button>' +
+                            '<button onclick="venderProduto(this)">Vender</button>';
+    }
+  }
   
