@@ -196,3 +196,26 @@ function atualizarQuantidadeProdutoPlanilha(cod, quantidade) {
     console.log('Erro ao atualizar a quantidade do produto: ' + error.result.error.message);
   });
 }
+
+// Função para consultar o estoque de um produto
+function consultarEstoque() {
+    var codigo = document.getElementById("consultaCodigo").value;
+    var estoqueAtual = obterEstoqueProduto(codigo);
+    document.getElementById("estoqueAtual").innerText = "Estoque Atual: " + estoqueAtual;
+  }
+  
+  // Função para obter o estoque de um produto
+  function obterEstoqueProduto(codigo) {
+    var tabela = document.getElementById("tabelaProdutos");
+  
+    for (var i = 1; i < tabela.rows.length; i++) {
+      var codCell = tabela.rows[i].cells[0];
+      if (codCell.innerHTML === codigo) {
+        var quantidadeCell = tabela.rows[i].cells[2];
+        return quantidadeCell.innerHTML;
+      }
+    }
+  
+    return "Produto não encontrado";
+  }
+  

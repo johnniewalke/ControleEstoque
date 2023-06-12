@@ -17,6 +17,17 @@
     <button onclick="adicionarProduto()">Adicionar Produto</button>
   </div>
 
+  <div id="consulta">
+    <h2>Consulta de Produtos</h2>
+    <input type="text" id="consultaCodigo" placeholder="Código do Produto">
+    <button onclick="consultarEstoque()">Consultar Estoque</button><br>
+    <input type="text" id="consultaNome" placeholder="Nome do Produto">
+    <button onclick="buscarPorNome()">Buscar por Nome</button><br>
+    <input type="text" id="consultaCategoria" placeholder="Categoria do Produto">
+    <button onclick="buscarPorCategoria()">Buscar por Categoria</button><br>
+    <button onclick="exibirTabelaCompleta()">Exibir Tabela Completa</button>
+  </div>
+
   <table id="tabelaProdutos">
     <tr>
       <th>Código</th>
