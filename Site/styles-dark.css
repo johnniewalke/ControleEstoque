@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  #themeSelector {
+    text-align: right;
+    padding: 10px;
+  }
+  
+  #container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+  }
+  
+  #formulario,
+  #consulta {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #222;
+    color: #fff;
+  }
+  
+  #tabelaProdutos {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #111;
+    color: #fff;
+  }
+  
+  #tabelaProdutos th,
+  #tabelaProdutos td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #tabelaProdutos th {
+    background-color: #111;
+  }
+  
+  #tabelaProdutos td {
+    background-color: #222;
+  }
+  
+  #tabelaProdutos tr:nth-child(even) td {
+    background-color: #333;
+  }
+  
+  #tabelaProdutos th,
+  #tabelaProdutos td:first-child {
+    min-width: 100px;
+  }
+  
+  #tabelaProdutos td:last-child {
+    text-align: center;
+  }
+  
+  #tabelaProdutos button {
+    padding: 5px 10px;
+  }
+  
