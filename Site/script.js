@@ -4,9 +4,9 @@ gapi.load('client', init);
 // Inicializa a API do Google Sheets
 function init() {
   gapi.client.init({
-    apiKey: 'SUA_API_KEY',
+    apiKey: 'AIzaSyCT9fYMHaZ8noerMql4DmUsFl-7Ar6IAmI',
     discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-    clientId: 'SEU_CLIENT_ID',
+    clientId: '137607133360-fghu4pjvvm086tnvph6usb69lt2247vs.apps.googleusercontent.com',
     scope: 'https://www.googleapis.com/auth/spreadsheets'
   }).then(function() {
     // API inicializada com sucesso
@@ -28,7 +28,7 @@ var descricaoInput = document.getElementById("descricao");
 var categoriaInput = document.getElementById("categoria");
 
 // ID da planilha do Google Sheets
-var spreadsheetId = 'ID_DA_PLANILHA';
+var spreadsheetId = '1yYBYPDKjaFbrBnNKprvssUXZcoTZIh7kbc-4r6T70To';
 
 // Nome da planilha que contém os produtos
 var sheetName = 'Nome_da_Planilha';
