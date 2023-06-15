@@ -31,7 +31,7 @@ var categoriaInput = document.getElementById("categoria");
 var spreadsheetId = '1yYBYPDKjaFbrBnNKprvssUXZcoTZIh7kbc-4r6T70To';
 
 // Nome da planilha que contém os produtos
-var sheetName = 'Controle de Estoque - Dani';
+var sheetName = 'Nome_da_Planilha';
 
 // Função para carregar os produtos do Google Sheets na tabela
 function carregarProdutos() {
